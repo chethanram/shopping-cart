@@ -29,6 +29,10 @@ class App extends Component {
        )
   }
 
+  onAddtocart = () => {
+    
+  }
+
 searchText = (text) =>{
    const result = this.state.items.filter(obj => Object.keys(obj).some(key => obj[key].toString().toLowerCase().includes(text.toLowerCase())));
   
@@ -41,7 +45,7 @@ searchText = (text) =>{
       <div className="App">
         <div>
           <Header searchText={this.searchText} />
-          <ShoppingList isLoading={isLoading} items={Object.entries(searchResult).length !== 0? searchResult : items}/>
+          <ShoppingList isLoading={isLoading} items={Object.entries(searchResult).length !== 0? searchResult : items } onAddtocart = {this.onAddtocart}/>
         </div>
       </div>
     );

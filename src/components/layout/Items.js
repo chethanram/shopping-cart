@@ -1,7 +1,8 @@
 import React from 'react';
 import {Card,Button} from 'react-bootstrap';
 
- const Items=({item: {img_url, name, price, discount, category} }) => {
+ const Items=({item: {img_url, name, price, discount, category}, onAddtocart }) => {
+    
         return (
             <div>
             <Card>
@@ -13,7 +14,7 @@ import {Card,Button} from 'react-bootstrap';
                 <br />
                 {category}
                 </Card.Text>
-                <Button variant="primary">Add to cart</Button>
+                <Button  type="submit" onClick={onAddtocart} value="Add to cart"  variant="warning">Add to cart </Button>
             </Card.Body>
             </Card>
             </div>

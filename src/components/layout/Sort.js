@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {Modal, Button } from 'react-bootstrap'
-export class Filter extends Component {
+import {Modal, Button, Form } from 'react-bootstrap'
+export class Sort extends Component {
     state ={
         showpop : false
     }
@@ -12,22 +12,20 @@ export class Filter extends Component {
     }
     render() {
         return (
-            <span>
+            <span >
             <Button variant="link" onClick={this.handleShow}>
-            Filter
-            </Button>   
+            Sort
+            </Button>
             <Modal show={this.state.showpop} onHide={this.handleClose} animation={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Filter options</Modal.Title>
+                    <Modal.Title>Sort options</Modal.Title>
                     </Modal.Header>
                 <Modal.Body>
-                    <div class="d-flex justify-content-center my-4">
-                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                    <form class="range-field w-25">
-                    <input class="border-0" type="range" min="0" max="100" />
-                    </form>
-                    <span class="font-weight-bold indigo-text ml-2 mt-1">100</span>
-                    </div>
+                  <div>
+                  <Form.Check label="Price - High low" type='radio' id='1' /> 
+                  <Form.Check label="Price - Low High" type='radio' id='1' /> 
+                  <Form.Check label="Discount" type='radio' id='1' /> 
+                  </div>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={this.handleClose}>
@@ -45,4 +43,4 @@ export class Filter extends Component {
     }
 }
 
-export default Filter
+export default Sort
