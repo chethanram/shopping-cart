@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Header from './components/layout/Header'
 import './App.css';
+import ShoppingList from './components/layout/ShoppingList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    items : [],
+    searchResult : {},
+    isLoading: true
+  };
+  componentDidMount (){
+     fetch("https://api.myjson.com/bins/qzuzi")
+       .then(res => res.json())
+       .then(
+         (result) => {
+           this.setState({
+             items: result,
+             isLoading: false
+           });
+         },        
+         (error) => {
+           this.setState({
+             isLoading: true,
+             error
+           });
+         }
+       )
+  }
+
+searchText = (text) =>{
+   const result = this.state.items.filter(obj => Object.keys(obj).some(key => obj[key].toString().toLowerCase().includes(text.toLowerCase())));
+  
+  this.setState({searchResult: result });
+}
+
+  render() {
+    const {isLoading, items, searchResult} = this.state;
+    return (
+      <div className="App">
+        <div>
+          <Header searchText={this.searchText} />
+          <ShoppingList isLoading = {isLoading} items={Object.entries(searchResult).length !== 0? searchResult : items}/>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
