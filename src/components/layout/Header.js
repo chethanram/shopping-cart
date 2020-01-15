@@ -18,10 +18,6 @@ export class Header extends Component {
                 <Nav className="mr-auto">
                     <i class="fas fa-star"></i>
                 </Nav>
-                {/* <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-light">Search</Button>
-                </Form> */}
                 <i className="fas fa-cart-plus"></i>
                 <Search searchValue={this.searchValue} />
                 
