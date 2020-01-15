@@ -9,7 +9,7 @@ import {Card,Button} from 'react-bootstrap';
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
-                {price} {discount}
+                {price} <del>{price*(discount/100) + price} </del> <span className='text-success'>{discount}% off </span>
                 <br />
                 {category}
                 </Card.Text>
