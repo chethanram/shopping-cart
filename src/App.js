@@ -41,7 +41,7 @@ searchText = (text) =>{
       <div className="App">
         <div>
           <Header searchText={this.searchText} />
-          <ShoppingList isLoading = {isLoading} items={Object.entries(searchResult).length !== 0? searchResult : items}/>
+          <ShoppingList isLoading={isLoading} items={Object.entries(searchResult).length !== 0? searchResult : items}/>
         </div>
       </div>
     );

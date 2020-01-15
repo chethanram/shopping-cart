@@ -17,8 +17,8 @@ export class Search extends Component {
     render() {
         return (
             <div>                
-                <Form inline className='form' onSubmit= {this.onSubmit}>
-                <input type="text" name='text' placeholder="Search" value={this.state.text} onChange = {this.onChange} />
+                <Form inline className='form' onSubmit={this.onSubmit}>
+                <input type="text" name='text' placeholder="Search" value={this.state.text} onChange={this.onChange} />
                  <input type='submit' value='Search' name='text' variant="outline-light" className='btn btn-dark ' />
                 </Form>
             </div>

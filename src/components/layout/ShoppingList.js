@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Container
 } from 'react-bootstrap';
@@ -15,7 +15,7 @@ const ShoppingList = ({ items, isLoading }) => {
             <div className="row" >
             {
                 items.map(item => (
-                    <div key={item.id}className="col-md-5ths">
+                    <div key={item.id}className="col-md-5ths col-xs-2">
                         <Items key={item.id} item={item}/>
                     </div>
                     )
