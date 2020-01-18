@@ -24,7 +24,7 @@ const ShoppingList = ({ items, isLoading, onAddtocart }) => {
             {
                 items.map(item => (
                     <div key={item.id}className="col-md-5ths col-xs-2">
-                        <Items key={item.id} item={item} onAddtocart = {onAddtocart}/>
+                        <Items key={item.id} item={item} onAddtocart={onAddtocart}/>
                     </div>
                     )
                 )

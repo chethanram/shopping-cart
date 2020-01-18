@@ -7,6 +7,7 @@ const intialstate = {
 
 export default (state=intialstate, action) => {
     switch(action.type){
-        default: state;
+        default: 
+        return state;
     }
 }

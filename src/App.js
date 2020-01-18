@@ -49,7 +49,7 @@ searchText = (text) =>{
       <div className="App">
         <div>
           <Header searchText={this.searchText} />
-          <ShoppingList isLoading={isLoading} items={Object.entries(searchResult).length !== 0? searchResult : items } onAddtocart = {this.onAddtocart}/>
+          <ShoppingList isLoading={isLoading} items={Object.entries(searchResult).length !== 0? searchResult : items } onAddtocart={this.onAddtocart}/>
         </div>
       </div>
       </Provider>
