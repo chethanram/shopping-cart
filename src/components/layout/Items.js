@@ -1,8 +1,14 @@
 import React from 'react';
 import {Card,Button} from 'react-bootstrap';
 
- const Items=({item: {img_url, name, price, discount, category}, onAddtocart }) => {
-    
+const onAddtocart = (e) => {
+    e.target.className = 'btn btn-secondary';
+    e.target.disabled= true;
+    e.target.textContent = 'added to cart';
+}
+
+ const Items=({item: {img_url, name, price, discount, category}}) => {
+
         return (
             <div>
             <Card>
